@@ -3,19 +3,23 @@ use s2
 
 create table country (Country_ID int primary key identity(1,1), Country_Name varchar(50))
 SP_SelecAllFromCountry
+                                                                                     
 insert into country values ('Germany'), ('Italy'), ('Uk'), ('Japan'), ('Canada'), ('Spain'), ('Finland'), ('France'), ('Usa'), ('China')
 
 create table province (Province_ID int primary key identity(1,1), Porovince_Name varchar(50), CountryName_ int foreign key references country(Country_ID))
 SP_SelecAllFromProvince
+                                                                                                                                              
 insert into province values ('Lombardy',2),('Tokyo',4),('Shanghai',10),('Bavaria',1),('Catalonia',6),('North West England',3), ('Auvergne-Rhone-Alpes',8),('California',9),('Brtish Coumbia',5), ('Uusimaa',7)
 
 
 create table city (City_ID int primary key identity(1,1), City_Name varchar(50), ProvinceName_ int foreign key references province(Province_ID))  
 SP_SelecAllFromCity
+                                                                                                                                   
 insert into city values ('Milan',1), ('Tokyo',2), ('Shanghai',3), ('Munich',4), ('Barcelona',5), ('Newcastle',6), ('Lyon',7), ('Los Angeles',8), ('Vancouver',9), ('Helsinki',10)
 
 Create table MaleEmployees (Employee_ID int primary key identity(1,1), Employee_Name varchar(50), Employee_Department varchar(50), Employee_Country int foreign key references country(Country_ID), Employee_Province int foreign key references province(Province_ID), Employee_City int foreign key references city(City_ID)) 
 SP_SelecAllFromMaleEmployees 
+
 insert into MaleEmployees values ('John','IT',9,8,8),
 ('Max','IT',7,10,10),
 ('Justin','Marketing',2,1,1),   
