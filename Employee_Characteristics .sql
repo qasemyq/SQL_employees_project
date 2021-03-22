@@ -40,9 +40,7 @@ insert into MaleEmployees values ('John','IT',9,8,8),
 ('Jacob','Retail',3,6,6),
 ('Dan','Mining',9,8,8),
 ('Andy','Food',1,4,4),
-('Peter','Insurance',2,1,1),
 ('Peter','Insurance',2,1,1)
-
 
 
 Create table FemaleEmployees (Employee_ID int primary key identity(1,1), Employee_Name varchar(50), Employee_Department varchar(50), Employee_Country int foreign key references country(Country_ID), Employee_Province int foreign key references province(Province_ID), Employee_City int foreign key references city(City_ID))
